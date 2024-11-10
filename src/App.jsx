@@ -8,9 +8,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <h1>Hi</h1>
-        <h2>Hey</h2>
-        <h3>santhosh</h3>
         {/* <Route index element={<Form />} /> */}
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<Home />} />
