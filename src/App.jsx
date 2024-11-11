@@ -3,17 +3,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductsView from "./features/ProductView/components/ProductsView";
+import WishList from "./features/WishList/components/WishList";
 
 function App() {
   return (
     <BrowserRouter>
-      <h1>hackeer </h1>
       <Routes>
         {/* <Route index element={<Form />} /> */}
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<ProductDetailPage />} />
         <Route path="/product" element={<ProductsView />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>
     </BrowserRouter>
   );

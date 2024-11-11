@@ -5,6 +5,7 @@ import { IonIcon } from "@ionic/react";
 import { heartOutline, heart } from "ionicons/icons";
 import { useDispatch } from "react-redux";
 import { setItem } from "./product.Slice";
+import ProductPrice from "../ProductPrice/ProductPrice";
 
 function ProductCard({ img, currntObj }) {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function ProductCard({ img, currntObj }) {
   }
 
   const id = currntObj.id;
+  if (!id) return;
 
   return (
     <Link to={`${id}`} className={styles.link}>
@@ -23,11 +25,7 @@ function ProductCard({ img, currntObj }) {
         <div className={styles.productInformations}>
           <p className={styles.brand}>NextGen</p>
           <p className={styles.title}>Polo Collar T-Shirt</p>
-          <div className={styles.productPrice}>
-            <span>Rs.2999</span>
-            <span>₹3778</span>
-            <span>10% off</span>
-          </div>
+          <ProductPrice price="2,577" offPrice="1,344" offPercentage="10" />
           <IonIcon
             className={styles.icon}
             icon={currntObj.isFilled ? heart : heartOutline}
