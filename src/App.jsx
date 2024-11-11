@@ -11,8 +11,8 @@ function App() {
       <Routes>
         {/* <Route index element={<Form />} /> */}
         <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<ProductDetailPage />} />
         <Route path="/product" element={<ProductsView />} />
+        <Route path="/:id" element={<ProductDetailPage />} />
         <Route path="/wishlist" element={<WishList />} />
       </Routes>
     </BrowserRouter>

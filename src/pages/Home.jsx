@@ -1,5 +1,5 @@
 import NavBar from "../features/Header/components/NavBar";
-import Hero from "../features/hero/components/Hero";
+import Hero from "../features/Hero/components/Hero";
 import ProductList from "../features/ProductList/components/ProductList";
 import Gender from "../features/Gender/components/Gender";
 import Footer from "../features/Footer/components/Footer";

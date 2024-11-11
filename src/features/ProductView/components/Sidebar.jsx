@@ -10,7 +10,6 @@ import {
 
 function Sidebar() {
   const { allItems } = useSelector((current) => current.product);
-  console.log(allItems);
 
   const stock = allItems.filter((el) => el.stock > 0).length;
   const soldOut = allItems.filter((el) => el.stock === 0).length;

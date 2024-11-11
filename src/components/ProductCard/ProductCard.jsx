@@ -19,7 +19,7 @@ function ProductCard({ img, currntObj }) {
   if (!id) return;
 
   return (
-    <Link to={`${id}`} className={styles.link}>
+    <Link to={`/${id}`} className={styles.link}>
       <div className={styles.card}>
         <img src={img} alt="product" />
         <div className={styles.productInformations}>

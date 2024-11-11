@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   allItems: [],
@@ -78,6 +78,13 @@ const productSlice = createSlice({
       console.log(state.wishList);
     },
 
+    removeWhisList(state, action) {
+      state.wishList = state.wishList.filter(
+        (el) => el.id !== action.payload.id
+      );
+      console.log(state.wishList);
+    },
+
     selectedProduct(state, action) {
       state.productView = action.payload;
       state.loading = false;
@@ -105,6 +112,7 @@ export const {
   filterInStock,
   filterSoldOut,
   clearFilters,
+  removeWhisList,
 } = productSlice.actions;
 
 export default productSlice.reducer;

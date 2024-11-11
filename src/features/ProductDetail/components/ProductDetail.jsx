@@ -35,7 +35,6 @@ function ProductDetail() {
   }, [id, dispatch]);
 
   if (!productView) return;
-  console.log(productView);
 
   return (
     <div className={styles.productDetailContainer}>
