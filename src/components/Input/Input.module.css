@@ -1,0 +1,30 @@
+input[type="checkbox"] {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  padding: 1.2rem;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 550;
+  margin-bottom: 1.8rem;
+  color: rgba(18, 18, 18, 0.9);
+}
+
+.inputBox:hover {
+  color: #000;
+}
+
+.inputBox input {
+  margin-right: 1.2rem;
+}
+
+.inputBox label {
+  margin-right: 0.4rem;
+}
+
+.inputBox:hover label {
+  box-shadow: 0 0.7px 0 0 #000;
+}

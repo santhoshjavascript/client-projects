@@ -1,0 +1,119 @@
+.card {
+  position: relative;
+  height: 40rem;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.card img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.productInformations {
+  padding: 0.6rem 0.8rem;
+  max-height: 20%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.productPrice {
+  font-size: 1.5rem;
+  font-weight: 550;
+  margin-bottom: 1.4rem;
+}
+
+.productPrice span:nth-child(1),
+.productPrice span:nth-child(3) {
+  margin-right: 0.8rem;
+}
+
+.productPrice span:nth-child(1) {
+  font-weight: 700;
+}
+
+.productPrice span:nth-child(3) {
+  color: #e97a1e;
+}
+
+.productPrice span:nth-child(2) {
+  margin-right: 1.4rem;
+  font-size: 1.3rem;
+  color: #a3a3a3;
+  text-decoration: line-through;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hoverInformations {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 1;
+  background: #f5f5f5;
+  z-index: 1;
+  transform: translateY(100%);
+}
+
+.addToWishlist {
+  text-align: center;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.8rem 2.2rem;
+  border: 1px solid #000;
+  cursor: pointer;
+  color: #fff;
+  background: rgb(83, 87, 102);
+}
+
+.addToWishlist span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.addToWishlist span > :first-child {
+  display: inline-flex;
+  align-items: center;
+}
+
+.card:hover .hoverInformations {
+  transform: translateY(0%);
+}
+
+.icon {
+  position: absolute;
+  font-size: 2.2rem;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}

@@ -1,0 +1,10 @@
+.offerContainer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.offerContainer p {
+  font-size: 1.4rem;
+}

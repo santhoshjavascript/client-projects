@@ -1,0 +1,20 @@
+.availability {
+  color: rgba(0, 0, 0);
+  font-size: 1.499rem;
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.availability {
+  margin-bottom: 2.2rem;
+}
+
+.availability span:nth-child(1) {
+  transform: translateY(2px);
+}
+
+.availability span:nth-child(2) {
+  display: none;
+}

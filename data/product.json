@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Essence Mascara Lash Princess",
+      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+      "category": "beauty",
+      "price": 500,
+      "discountPercentage": 7.17,
+      "rating": 4.94,
+      "stock": 0,
+      "tags": ["beauty", "mascara"],
+      "brand": "Essence",
+      "sku": "RCH45Q1A",
+      "weight": 2,
+      "dimensions": {
+        "width": 23.17,
+        "height": 14.43,
+        "depth": 28.01
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/2.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/3.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/4.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/5.png"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+    },
+    {
+      "id": 2,
+      "title": "Maybelline Lipstick",
+      "description": "Maybelline's long-lasting lipstick provides rich color with a matte finish, suitable for all-day wear.",
+      "category": "beauty",
+      "price": 300,
+      "discountPercentage": 5.5,
+      "rating": 4.5,
+      "stock": 0,
+      "tags": ["beauty", "lipstick"],
+      "brand": "Maybelline",
+      "sku": "MBLSTK01",
+      "weight": 1,
+      "dimensions": {
+        "width": 2.5,
+        "height": 7.1,
+        "depth": 2.5
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/beauty/Maybelline%20Lipstick/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Maybelline%20Lipstick/2.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Maybelline%20Lipstick/3.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Maybelline%20Lipstick/4.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Maybelline%20Lipstick/5.png"
+      ],
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTysNq-rjyaCCfE7fXWPLQEpTNLen20YBYGmZ82PPivwPovuX1sFZLGOHyw6nbGXThQjUI&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "title": "L'Oréal Foundation",
+      "description": "A lightweight, full-coverage foundation by L'Oréal that lasts up to 24 hours with a flawless finish.",
+      "category": "beauty",
+      "price": 600,
+      "discountPercentage": 10,
+      "rating": 4.6,
+      "stock": 8,
+      "tags": ["beauty", "foundation"],
+      "brand": "L'Oréal",
+      "sku": "LRFND01",
+      "weight": 1,
+      "dimensions": {
+        "width": 3.2,
+        "height": 9.3,
+        "depth": 3.2
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/beauty/Loreal%20Foundation/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Loreal%20Foundation/2.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Loreal%20Foundation/3.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Loreal%20Foundation/4.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Loreal%20Foundation/5.png"
+      ],
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJhTTWlow7SA0TmAciEkXX7ZwwROKJIWpPjxRKVGYOA0xjlfOtMkm68R9M6VC_XDfyw7Q&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "title": "Dove Body Lotion",
+      "description": "Moisturizing body lotion by Dove for soft and smooth skin, suitable for all skin types.",
+      "category": "beauty",
+      "price": 100,
+      "discountPercentage": 4.0,
+      "rating": 4.7,
+      "stock": 0,
+      "tags": ["beauty", "body lotion"],
+      "brand": "Dove",
+      "sku": "DVBODYL01",
+      "weight": 4,
+      "dimensions": {
+        "width": 5.5,
+        "height": 15.0,
+        "depth": 5.5
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/beauty/Dove%20Body%20Lotion/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Dove%20Body%20Lotion/2.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Dove%20Body%20Lotion/3.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Dove%20Body%20Lotion/4.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Dove%20Body%20Lotion/5.png"
+      ],
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjW4BTAxgpMQvZbA_BtBa2Y-SO7H0h-StKGk9-JO5M3QqawNJvQJa7CqUCr4jkuD6zhU&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "title": "Neutrogena Face Wash",
+      "description": "Gentle facial cleanser by Neutrogena, perfect for daily use to keep skin clear and refreshed.",
+      "category": "beauty",
+      "price": 900,
+      "discountPercentage": 3.0,
+      "rating": 4.4,
+      "stock": 0,
+      "tags": ["beauty", "face wash"],
+      "brand": "Neutrogena",
+      "sku": "NGFACEW01",
+      "weight": 2,
+      "dimensions": {
+        "width": 4.0,
+        "height": 12.0,
+        "depth": 4.0
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/beauty/Neutrogena%20Face%20Wash/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Neutrogena%20Face%20Wash/2.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Neutrogena%20Face%20Wash/3.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Neutrogena%20Face%20Wash/4.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Neutrogena%20Face%20Wash/5.png"
+      ],
+      "thumbnail": "https://t3.ftcdn.net/jpg/05/56/29/10/360_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
+    }
+  ]
+}

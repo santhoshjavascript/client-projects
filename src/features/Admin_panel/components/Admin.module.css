@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Devonshire&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.admin {
+  display: grid;
+  grid-template-columns: 28rem 1fr;
+  font-family: "Inter", sans-serif;
+}
+
+.sidebar {
+  display: block;
+  height: 100vh;
+  background-color: #f8f9fb;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5.8rem 0 0 3.6rem;
+}
+
+.logoContainer img {
+  height: 3.4rem;
+  width: 3.4rem;
+  filter: brightness(0);
+}
+
+.logoContainer > svg {
+  fill: #adb5bd;
+  height: 2.4rem;
+  margin-right: 1.8rem;
+}
+
+.navbar {
+  margin: 3.6rem auto 0;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.navList .navLink {
+  font-size: 1.6rem;
+  padding: 1.4rem 1.4rem 1.4rem 3.6rem;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.navList .navLink:hover {
+  background-color: #fff;
+}
+
+.navList .navLink a {
+  color: inherit;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navList .navLink a ion-icon {
+  font-size: 1.8rem;
+}
+
+.navList .navLink:hover a {
+  color: rgba(0, 0, 0, 1);
+}
+
+.navList .navLink:hover a ion-icon {
+  color: #4dabf7;
+}
+
+.navList .navHeading {
+  margin-top: 1.6rem;
+  font-size: 1.2rem;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.navList .navLink a ion-icon[name="chevron-forward-outline"] {
+  margin-left: auto;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* CONTENT PART */
+.content {
+  padding: 4.8rem;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.summary li {
+  height: 18rem;
+  padding: 2.4rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.6rem;
+}
+
+.summaryTitle {
+  font-size: 3rem;
+  margin-bottom: 1.8rem;
+}
+
+.summaryDetails {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.summaryDetails ion-icon {
+  font-size: 3rem;
+  color: #fff;
+  padding: 2.4rem;
+  background-color: red;
+  border-radius: 0.4rem;
+}
+
+.summaryDetails div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.summaryDetails div p {
+  font-size: 3.6rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.summaryDetails div span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}

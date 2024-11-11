@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Devonshire&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Devans";
+  src: url("../../../fonts/Devans.otf") format("truetype");
+  font-weight: 400;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+  align-items: center;
+  padding: 1.2rem 1.8rem;
+  position: sticky;
+}
+
+/* .logo {
+  height: 5rem;
+  width: 5rem;
+  justify-self: center;
+  filter: brightness(0) invert(0);
+} */
+
+.logoName {
+  font-size: 4rem;
+  font-family: "Devans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+}
+
+.input {
+  gap: 2.4rem;
+  grid-template-columns: 5fr 1fr;
+}
+
+.inputContainer {
+  border: solid 1px #ccc;
+  align-items: center;
+  padding: 0 0.4rem;
+
+  grid-template-columns: 5fr 1fr;
+}
+
+.inputContainer input {
+  border: none;
+  outline: none;
+  height: 4rem;
+  padding: 0 0.4rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.inputContainer span {
+  justify-self: end;
+  cursor: pointer;
+}
+
+.searchIcon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.actions {
+  font-size: 2.4rem;
+  color: #525252;
+  display: flex;
+  gap: 1.8rem;
+}
+
+.actions span {
+  transition: all 0.2s;
+}
+
+.actions span:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+:global(.grid) {
+  display: grid;
+  justify-content: center;
+}
+
+:global(.flex) {
+  display: flex;
+  align-items: center;
+}
+
+:global(.grid--col-2) {
+  grid-template-columns: 2fr 1fr;
+}
+
+:global(.icon) {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.menuList {
+  font-size: 1.4rem;
+  font-weight: 400;
+  gap: 4.8rem;
+  justify-content: center;
+  padding: 1rem 4.8rem;
+  text-transform: uppercase;
+
+  border-top: 1px solid #ccc;
+}
+
+.menuItem {
+  display: flex;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding-bottom: 0.2rem;
+
+  position: relative;
+}
+
+.menuItem span {
+  display: flex;
+  align-items: center;
+}
+
+.menuItem span ion-icon {
+  color: #ff922b;
+  transition: all 0.3s;
+}
+
+.menuItem:hover span ion-icon {
+  color: #000;
+}
+
+.menuItem:after {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  margin-top: 0.2rem;
+  background: #000;
+  transition: width 0.2s;
+}
+
+.menuItem:hover:after {
+  width: 100%;
+}
