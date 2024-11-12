@@ -19,11 +19,17 @@ const productSlice = createSlice({
       state.error = null;
     },
     setItems(state, action) {
-      state.allItems = action.payload;
-      state.items = action.payload;
+      const itemsWithIsFilled = action.payload.map((item) => ({
+        ...item,
+        isFilled: state.wishList.some(
+          (wishlistItem) => wishlistItem.id === item.id
+        ),
+      }));
+
+      state.allItems = itemsWithIsFilled;
+      state.items = itemsWithIsFilled;
       state.loading = false;
     },
-
     priceChanges(state, action) {
       const { min, max } = action.payload;
       if (min && max) {
@@ -57,6 +63,7 @@ const productSlice = createSlice({
 
     setItem(state, action) {
       const updatedItem = action.payload;
+
       state.items = state.items.map((item) =>
         item.id === updatedItem.id
           ? { ...item, isFilled: !item.isFilled }
@@ -67,7 +74,19 @@ const productSlice = createSlice({
       state.item = toggledItem;
 
       if (toggledItem.isFilled) {
-        state.wishList = [...state.wishList, toggledItem];
+        // state.wishList = [...state.wishList, toggledItem];
+
+        const uniqueWishList = [...state.wishList, toggledItem].reduce(
+          (accumulator, current) => {
+            if (!accumulator.some((el) => el.id === current.id)) {
+              accumulator.push(current);
+            }
+            return accumulator;
+          },
+          []
+        );
+
+        state.wishList = uniqueWishList;
       } else {
         state.wishList = state.wishList.filter(
           (el) => el.id !== toggledItem.id
