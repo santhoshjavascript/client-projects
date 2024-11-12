@@ -40,7 +40,6 @@ function PriceInput({ minPlaceholder, maxPlaceholder }) {
           className={styles.inputMin}
           id="min-price"
           onChange={minInputVal}
-          // placeholder={minPlaceholder}
         />
         <label htmlFor="min-price" className={styles.label}>
           {minPlaceholder}
@@ -54,7 +53,6 @@ function PriceInput({ minPlaceholder, maxPlaceholder }) {
           className={styles.inputMin}
           id="max-price"
           onChange={maxInputVal}
-          // placeholder={maxPlaceholder}
         />
         <label htmlFor="max-price" className={styles.label}>
           {maxPlaceholder}

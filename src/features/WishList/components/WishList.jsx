@@ -14,11 +14,11 @@ function WishList() {
       <div className={styles.wishlist}>
         <p className={styles.myWishList}>My WishList</p>
         {wishList.length === 0 ? (
-          <span className={styles.myWishList}>
-            Bro Go to Add Wish List First Bro
-          </span>
+          <span className={styles.myWishList}>Add Items</span>
         ) : (
-          <span className={styles.itemsCount}>{wishList.length}</span>
+          <span className={styles.itemsCount}>{`(${wishList.length} ${
+            wishList.length > 1 ? "items" : "item"
+          })`}</span>
         )}
         <div className={styles.cardContainer}>
           {wishList.map((el) => (
