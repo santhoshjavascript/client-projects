@@ -12,14 +12,9 @@ function App() {
       <Routes>
         {/* <Route index element={<Form />} /> */}
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
         <Route path="*" element={<h1>Page Not Found</h1>} />
-        <Route path="/product" element={<ProductsView />} />
-        <Route path="/:id" element={<ProductDetailPage />} />
-=======
         <Route path="/product" element={<ProductsViewPage />} />
-        <Route path="/product/:id" element={<ProductDetailPage />} />
->>>>>>> origin/dev
+        <Route path="/:id" element={<ProductDetailPage />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>
