@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities; */
 
+/* @font-face {
+  font-family: "HelveticaNeue";
+  src: url(../src/fonts/);
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +19,7 @@ html {
 }
 
 body {
-  font-family: "Assistant", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;

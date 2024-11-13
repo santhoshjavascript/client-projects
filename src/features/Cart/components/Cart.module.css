@@ -1,0 +1,291 @@
+.cartBox {
+  margin-top: 3.6rem;
+  min-height: auto;
+  max-width: 1333px;
+  margin: 3.6rem auto 0 auto;
+
+  display: flex;
+  gap: 2.4rem;
+}
+
+:focus {
+  outline: none;
+}
+
+.cartHeading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 4.2rem;
+  font-weight: 550;
+  padding-top: 3.6rem;
+  padding-bottom: 2rem;
+}
+
+/* CART LEFT */
+
+.cartLeft {
+  width: 65%;
+}
+
+.tableLeft {
+  width: 100%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.tableLeft thead tr,
+.tableLeft tbody tr {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  align-items: center;
+  /* gap: 1.4rem; */
+}
+
+/* .tableLeft tbody tr th {
+  padding: 1.2rem;
+} */
+
+.tableLeft thead tr {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.product {
+  text-align: start;
+}
+
+.product,
+.price,
+.quantity {
+  padding-block: 2.4rem;
+  /* padding-inline: 2.4rem; */
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.productRow {
+  position: relative;
+}
+
+.productCardItem {
+  max-width: 43rem;
+  display: flex;
+}
+
+.imgBox {
+  margin-right: 3rem;
+}
+
+.imgBox img {
+  max-width: 10rem;
+  height: 100%;
+}
+
+.brandName {
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.contentBox {
+  padding-block: 2.4rem;
+}
+
+.contentBox span,
+.contentBox a {
+  display: block;
+}
+
+.contentBox a:link,
+.contentBox a:visited {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  max-width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: none;
+  transition: all 0.2s;
+}
+
+.contentBox a:hover {
+  color: #808080;
+}
+
+.optionBox {
+  text-transform: none;
+  font-size: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.optionBox span:nth-child(3) {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-top: 0.6rem;
+  cursor: pointer;
+}
+
+/* .tableLeft tbody {
+  display: block;
+  margin-top: 2.4rem;
+} */
+
+.tableLeft tbody tr {
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+.tableLeft tbody tr:not(:last-child) {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.priceInput {
+  margin: 0 auto;
+}
+
+.priceWrapper {
+  width: 10rem;
+  height: 5rem;
+  border: 1px solid #dedede;
+  border-radius: 0.4rem;
+  font-size: 2.4rem;
+  padding-inline: 0.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.priceInput span {
+  cursor: pointer;
+}
+
+.priceInput input {
+  text-align: center;
+  width: 50%;
+  outline: none;
+  border: none;
+}
+
+.tableLeft tbody tr td:nth-child(3) {
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+.btnDelete {
+  position: absolute;
+  font-size: 2.4rem;
+  right: 0rem;
+  top: 2.6rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  border: 1px solid #616161;
+  color: #797979;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  width: max-content;
+  color: #000;
+  font-size: 1.334rem;
+  font-weight: 500;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  transition: all 0.2s;
+
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.link ion-icon {
+  transition: all 0.2s;
+}
+
+.link:hover ion-icon {
+  transform: translateX(2px);
+}
+
+/* CART RIGHT */
+
+.cartRight {
+  width: calc(100% - 65%);
+}
+
+.tableRight {
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+.tableRight tbody {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.tableRight tbody tr {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.tableRight tbody tr td {
+  padding-block: 1.4rem;
+}
+
+.tableRight tbody tr:last-child {
+  /* border-block: 1px solid #000; */
+  margin-bottom: 2.4rem;
+}
+
+.tableRight tbody tr td:nth-child(2) {
+  /* color: #006fe6; */
+  font-weight: 550;
+}
+
+.btnCheckout {
+  width: 100%;
+  border: none;
+  padding: 1.4rem 2.6rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.textArea {
+  margin-bottom: 1.4rem;
+}
+
+.textArea label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.textArea textarea {
+  width: 100%;
+  padding: 1.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid #dedede;
+}
+
+.textArea textarea:focus {
+  border: 1px solid #000;
+}

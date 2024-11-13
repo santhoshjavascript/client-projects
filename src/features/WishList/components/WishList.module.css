@@ -1,6 +1,6 @@
 .myWishList,
 .itemsCount {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .myWishList {
@@ -45,7 +45,7 @@
 }
 
 .wishlistInfo div:first-child p {
-  font-size: 1.6rem;
+  font-size: 1.377rem;
   color: #282c3f;
   font-weight: 500;
   text-overflow: ellipsis;
@@ -53,14 +53,14 @@
   white-space: nowrap;
   width: 90%;
   padding-bottom: 0.8rem;
-  margin: 0 auto;
+  margin: 0 auto 0.2rem auto;
 }
 
 .moveToBagBox {
   height: 7%;
-  font-size: 1.6rem;
+  font-size: 1.334rem;
   font-weight: 700;
-  color: #e63861;
+  color: #343a40;
   text-transform: uppercase;
   cursor: pointer;
 
