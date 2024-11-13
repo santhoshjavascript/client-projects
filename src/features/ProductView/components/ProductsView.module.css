@@ -1,10 +1,10 @@
-.productBox {
+.productsView {
   margin-top: 7.8rem;
   margin-bottom: 2.4rem;
   display: grid;
 }
 
-.productBox select {
+.productsView select {
   width: max-content;
   justify-self: end;
   margin: 0 2.3rem 0.8rem 0;
