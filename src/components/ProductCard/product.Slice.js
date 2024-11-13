@@ -18,6 +18,7 @@ const productSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
+
     setItems(state, action) {
       const itemsWithIsFilled = action.payload.map((item) => ({
         ...item,
@@ -30,6 +31,7 @@ const productSlice = createSlice({
       state.items = itemsWithIsFilled;
       state.loading = false;
     },
+
     priceChanges(state, action) {
       const { min, max } = action.payload;
       if (min && max) {
