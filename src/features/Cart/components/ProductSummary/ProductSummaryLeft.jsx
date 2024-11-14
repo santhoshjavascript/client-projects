@@ -1,11 +1,11 @@
-import styles from "./Cart.module.css";
+import styles from "./ProductSummary.module.css";
 import { Link } from "react-router-dom";
-import { assets } from "../../../assets/assets";
+import { assets } from "../../../../assets/assets";
 
 function CartLeft() {
   return (
-    <div className={styles.cartLeft}>
-      <h1 className={styles.cartHeading}>Your Cart</h1>
+    <div className={styles.productSummaryLeft}>
+      <h1 className={styles.heading}>Your Cart</h1>
       <div className={styles.cartInfo}>
         <table className={styles.tableLeft}>
           <thead>

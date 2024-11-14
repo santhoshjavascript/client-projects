@@ -1,9 +1,9 @@
-import styles from "./Cart.module.css";
+import styles from "./ProductSummary.module.css";
 
 function CartRight() {
   return (
-    <div className={styles.cartRight}>
-      <h1 className={styles.cartHeading}>Order Summary</h1>
+    <div className={styles.productSummaryRight}>
+      <h1 className={styles.heading}>Order Summary</h1>
 
       <aside className={styles.priceSummaryBox}>
         <table className={styles.tableRight}>
@@ -28,7 +28,7 @@ function CartRight() {
           <textarea id="story" name="story" rows="5" cols="33"></textarea>
         </form>
 
-        <button className={styles.btnCheckout}>checkout</button>
+        <button className={styles.btnCheckout}>place order</button>
       </aside>
     </div>
   );

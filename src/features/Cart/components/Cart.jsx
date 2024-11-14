@@ -1,13 +1,23 @@
-import styles from "./Cart.module.css";
-import CartLeft from "./CartLeft";
-import CartRight from "./CartRight";
+import { useState } from "react";
+import ProductSummary from "./ProductSummary/ProductSummary";
 
 function Cart() {
+  const [currentStep, setCurrentStep] = useState(1);
+
+  function nextStep() {
+    setCurrentStep((prev) => prev + 1);
+  }
+
+  function prevStep() {
+    setCurrentStep((prev) => prev - 1);
+  }
+
   return (
-    <section className={styles.cartBox}>
-      <CartLeft />
-      <CartRight />
-    </section>
+    <div>
+      {currentStep === 1 && <ProductSummary nextStep={nextStep} />}
+      {currentStep === 2 && <ProductSummary prevStep={prevStep} />}
+      {currentStep === 3 && <ProductSummary prevStep={prevStep} />}
+    </div>
   );
 }
 

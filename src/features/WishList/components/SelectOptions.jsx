@@ -23,6 +23,7 @@ function SelectOptions() {
         </div>
       </aside>
       <button className={styles.btnDone}>Done</button>
+      <button className={styles.btnDelete}>&times;</button>
     </section>
   );
 }

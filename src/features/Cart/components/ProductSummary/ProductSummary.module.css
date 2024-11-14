@@ -1,4 +1,4 @@
-.cartBox {
+.productSummaryBox {
   margin-top: 3.6rem;
   min-height: auto;
   max-width: 1333px;
@@ -12,7 +12,7 @@
   outline: none;
 }
 
-.cartHeading {
+.heading {
   font-family: "Times New Roman", Times, serif;
   font-size: 4.2rem;
   font-weight: 550;
@@ -20,9 +20,9 @@
   padding-bottom: 2rem;
 }
 
-/* CART LEFT */
+/* productSummary LEFT */
 
-.cartLeft {
+.productSummaryLeft {
   width: 65%;
 }
 
@@ -220,9 +220,9 @@
   transform: translateX(2px);
 }
 
-/* CART RIGHT */
+/* productSummary RIGHT */
 
-.cartRight {
+.ProductSummary {
   width: calc(100% - 65%);
 }
 
