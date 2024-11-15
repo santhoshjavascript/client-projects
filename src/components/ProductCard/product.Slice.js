@@ -127,17 +127,19 @@ const productSlice = createSlice({
 
     setAddCart(state, action) {
       const newItem = action.payload;
+
+      // Find an item with the same ID and size in the cart
       const existingItemIndex = state.addCart.findIndex(
-        (el) => el.id === newItem.id
+        (el) => el.id === newItem.id && el.size === newItem.size
       );
 
       if (existingItemIndex !== -1) {
-        // Item already exists, update the quantity
+        // Item with same ID and size exists, increment its quantity
         const updatedCart = [...state.addCart];
-        updatedCart[existingItemIndex].quantity += 1; // Increment quantity
+        updatedCart[existingItemIndex].quantity += 1;
         state.addCart = updatedCart;
       } else {
-        // Item doesn't exist, add it to the cart with quantity 1
+        // Item with a new size or ID, add to cart with quantity 1
         state.addCart = [...state.addCart, { ...newItem, quantity: 1 }];
       }
 
@@ -145,16 +147,20 @@ const productSlice = createSlice({
       const updatedTotal = state.addCart.reduce((acc, cur) => {
         return acc + cur.price * cur.quantity;
       }, 0);
+
+      // Update the amount object with the new total
       state.amount = { total: updatedTotal };
     },
-
     setAmount(state, action) {
       state.amount = { total: action.payload.amount }; // Adjust amount to be an object with 'total'
     },
 
     deletingCart(state, action) {
-      // Remove the item from the cart based on the ID
-      state.addCart = state.addCart.filter((el) => el.id !== action.payload.id);
+      // Remove the item from the cart based on both ID and size
+      state.addCart = state.addCart.filter(
+        (el) =>
+          !(el.id === action.payload.id && el.size === action.payload.size)
+      );
 
       // Recalculate the total amount after the item is deleted
       const updatedTotal = state.addCart.reduce((acc, cur) => {
