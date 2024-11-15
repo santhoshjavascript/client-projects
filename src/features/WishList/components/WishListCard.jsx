@@ -2,16 +2,20 @@ import styles from "./WishList.module.css";
 import { assets } from "../../../assets/assets";
 import ProductPrice from "../../../components/ProductPrice/ProductPrice";
 import { useDispatch } from "react-redux";
-import { removeWhisList } from "../../../components/ProductCard/product.Slice";
+import {
+  removeWhisList,
+  setIsShow,
+} from "../../../components/ProductCard/product.Slice";
 
 function WishListCard({ obj }) {
-  console.log(obj);
   const dispatch = useDispatch();
 
-  function deleteWhisList(event, currntObj) {
-    console.log(event, currntObj);
-
+  function deleteWhisList(currntObj) {
     dispatch(removeWhisList(currntObj));
+  }
+
+  function moveToBag(addObj) {
+    dispatch(setIsShow(addObj));
   }
 
   return (
@@ -24,12 +28,12 @@ function WishListCard({ obj }) {
         </div>
       </div>
       <div className={styles.moveToBagBox}>
-        <div>
+        <div onClick={() => moveToBag(obj)}>
           <ion-icon name="bag-outline"></ion-icon>
           <span>move to bag</span>
         </div>
       </div>
-      <div className={styles.btnDelete} onClick={(e) => deleteWhisList(e, obj)}>
+      <div className={styles.btnDelete} onClick={() => deleteWhisList(obj)}>
         <ion-icon name="close-outline"></ion-icon>
       </div>
     </div>

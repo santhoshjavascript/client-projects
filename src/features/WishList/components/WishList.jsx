@@ -7,7 +7,8 @@ import SelectOptions from "./SelectOptions";
 
 function WishList() {
   const { wishList } = useSelector((current) => current.product);
-  console.log(wishList);
+
+  const { isShow } = useSelector((current) => current.product);
 
   return (
     <>
@@ -27,7 +28,10 @@ function WishList() {
             <WishListCard key={crypto.randomUUID()} obj={el} />
           ))}
         </div>
-        <div className={styles.overlay}></div>
+        <div
+          className={styles.overlay}
+          style={{ display: isShow ? "block" : "none" }}
+        ></div>
         <SelectOptions />
       </div>
       <Footer />

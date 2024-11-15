@@ -8,6 +8,10 @@ const initialState = {
   item: null,
   wishList: [],
   productView: null,
+  isShow: false,
+  derssSize: "",
+  addCart: [],
+  amount: {},
 };
 
 const productSlice = createSlice({
@@ -76,8 +80,6 @@ const productSlice = createSlice({
       state.item = toggledItem;
 
       if (toggledItem.isFilled) {
-        // state.wishList = [...state.wishList, toggledItem];
-
         const uniqueWishList = [...state.wishList, toggledItem].reduce(
           (accumulator, current) => {
             if (!accumulator.some((el) => el.id === current.id)) {
@@ -115,7 +117,51 @@ const productSlice = createSlice({
       state.productView = null;
     },
 
+    setIsShow(state, action) {
+      state.isShow = action.payload;
+    },
+
+    selectedSizes(state, action) {
+      state.derssSize = action.payload;
+    },
+
+    setAddCart(state, action) {
+      const newItem = action.payload;
+      const existingItemIndex = state.addCart.findIndex(
+        (el) => el.id === newItem.id
+      );
+
+      if (existingItemIndex !== -1) {
+        // Item already exists, update the quantity
+        const updatedCart = [...state.addCart];
+        updatedCart[existingItemIndex].quantity += 1; // Increment quantity
+        state.addCart = updatedCart;
+      } else {
+        // Item doesn't exist, add it to the cart with quantity 1
+        state.addCart = [...state.addCart, { ...newItem, quantity: 1 }];
+      }
+    },
+
+    setAmount(state, action) {
+      state.amount = { total: action.payload.amount };
+    },
+
+    deletingCart(state, action) {
+      state.addCart = state.addCart.filter((el) => el.id !== action.payload.id);
+      const currentTotal = state.addCart.reduce((acc, cur) => {
+        return acc + cur.price;
+      }, 0);
+
+      state.amount = currentTotal;
+
+      if (state.addCart.length === 0) {
+        state.amount = 0;
+      }
+    },
+
     setError(state, action) {
+      console.log(action.payload);
+
       state.error = action.payload;
       state.loading = false;
     },
@@ -134,6 +180,11 @@ export const {
   filterSoldOut,
   clearFilters,
   removeWhisList,
+  setIsShow,
+  selectedSizes,
+  setAddCart,
+  setAmount,
+  deletingCart,
 } = productSlice.actions;
 
 export default productSlice.reducer;
