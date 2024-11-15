@@ -8,6 +8,10 @@ const initialState = {
   item: null,
   wishList: [],
   productView: null,
+  isShow: false,
+  derssSize: "",
+  addCart: [],
+  amount: { total: 0 }, // Initialize amount with total
 };
 
 const productSlice = createSlice({
@@ -76,8 +80,6 @@ const productSlice = createSlice({
       state.item = toggledItem;
 
       if (toggledItem.isFilled) {
-        // state.wishList = [...state.wishList, toggledItem];
-
         const uniqueWishList = [...state.wishList, toggledItem].reduce(
           (accumulator, current) => {
             if (!accumulator.some((el) => el.id === current.id)) {
@@ -115,7 +117,71 @@ const productSlice = createSlice({
       state.productView = null;
     },
 
+    setIsShow(state, action) {
+      state.isShow = action.payload;
+    },
+
+    selectedSizes(state, action) {
+      state.derssSize = action.payload;
+    },
+
+    setAddCart(state, action) {
+      const newItem = action.payload;
+
+      // Find an item with the same ID and size in the cart
+      const existingItemIndex = state.addCart.findIndex(
+        (el) => el.id === newItem.id && el.size === newItem.size
+      );
+
+      if (existingItemIndex !== -1) {
+        // Item with same ID and size exists, increment its quantity
+        const updatedCart = [...state.addCart];
+        updatedCart[existingItemIndex].quantity += 1;
+        state.addCart = updatedCart;
+      } else {
+        // Item with a new size or ID, add to cart with quantity 1
+        state.addCart = [...state.addCart, { ...newItem, quantity: 1 }];
+      }
+
+      // Recalculate the total amount
+      const updatedTotal = state.addCart.reduce((acc, cur) => {
+        return acc + cur.price * cur.quantity;
+      }, 0);
+
+      // Update the amount object with the new total
+      state.amount = { total: updatedTotal };
+    },
+    setAmount(state, action) {
+      state.amount = { total: action.payload.amount }; // Adjust amount to be an object with 'total'
+    },
+
+    deletingCart(state, action) {
+      // Remove the item from the cart based on both ID and size
+      state.addCart = state.addCart.filter(
+        (el) =>
+          !(el.id === action.payload.id && el.size === action.payload.size)
+      );
+
+      // Recalculate the total amount after the item is deleted
+      const updatedTotal = state.addCart.reduce((acc, cur) => {
+        return acc + cur.price * cur.quantity;
+      }, 0);
+
+      // Update the amount with the new total
+      state.amount = { total: updatedTotal };
+
+      // If the cart is empty, set the total to 0
+      if (state.addCart.length === 0) {
+        state.amount = { total: 0 }; // Reset the total if the cart is empty
+      }
+
+      // Log the updated state for debugging purposes
+      console.log("Updated Cart:", state.addCart);
+      console.log("Updated Total Amount:", state.amount.total);
+    },
+
     setError(state, action) {
+      console.log(action.payload);
       state.error = action.payload;
       state.loading = false;
     },
@@ -134,6 +200,11 @@ export const {
   filterSoldOut,
   clearFilters,
   removeWhisList,
+  setIsShow,
+  selectedSizes,
+  setAddCart,
+  setAmount,
+  deletingCart,
 } = productSlice.actions;
 
 export default productSlice.reducer;

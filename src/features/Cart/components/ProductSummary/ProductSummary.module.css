@@ -21,7 +21,6 @@
 }
 
 /* productSummary LEFT */
-
 .productSummaryLeft {
   width: 65%;
 }
@@ -162,13 +161,20 @@
   justify-content: space-between;
 }
 
+.priceWrapper button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 2.4rem;
+}
+
 .priceInput span {
   cursor: pointer;
 }
 
 .priceInput input {
   text-align: center;
-  width: 50%;
+  width: 40%;
   outline: none;
   border: none;
 }
@@ -222,7 +228,7 @@
 
 /* productSummary RIGHT */
 
-.ProductSummary {
+.productSummaryRight {
   width: calc(100% - 65%);
 }
 
@@ -268,6 +274,7 @@
 }
 
 .textArea {
+  width: 100%;
   margin-bottom: 1.4rem;
 }
 

@@ -1,10 +1,45 @@
 import styles from "./WishList.module.css";
 import { assets } from "../../../assets/assets";
 import ProductPrice from "../../../components/ProductPrice/ProductPrice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectedSizes,
+  setAddCart,
+  setIsShow,
+} from "../../../components/ProductCard/product.Slice";
 
 function SelectOptions() {
+  const { isShow, derssSize } = useSelector((current) => current.product);
+  const dispatch = useDispatch();
+
+  function closeCart() {
+    dispatch(setIsShow(false));
+  }
+
+  const arr = ["S", "M", "L", "XL", "XLL"];
+
+  function selectedSize(size) {
+    dispatch(selectedSizes(size));
+  }
+
+  function addToCart() {
+    if (isShow) {
+      const store = { ...isShow, size: derssSize };
+      if (!derssSize) alert("Select size bro");
+      if (derssSize) {
+        dispatch(setAddCart(store));
+        alert("Item Added Sucesssfully");
+        dispatch(setIsShow(false));
+        dispatch(selectedSizes(""));
+      }
+    }
+  }
+
   return (
-    <section className={styles.selectOptions}>
+    <section
+      className={styles.selectOptions}
+      style={{ display: isShow ? "block" : "none" }}
+    >
       <div className={styles.optionsProductCard}>
         <img src={assets.women} alt="" />
         <div>
@@ -15,15 +50,25 @@ function SelectOptions() {
       <aside className={styles.sizeBox}>
         <p>Select Size</p>
         <div>
-          <div className={styles.size}>S</div>
-          <div className={styles.size}>M</div>
-          <div className={styles.size}>L</div>
-          <div className={styles.size}>XL</div>
-          <div className={styles.size}>XXL</div>
+          {arr.map((el) => (
+            <div
+              key={el}
+              className={` ${styles.size} ${
+                el === derssSize ? styles.active : ""
+              }`}
+              onClick={() => selectedSize(el)}
+            >
+              {el}
+            </div>
+          ))}
         </div>
       </aside>
-      <button className={styles.btnDone}>Done</button>
-      <button className={styles.btnDelete}>&times;</button>
+      <button className={styles.btnDone} onClick={addToCart}>
+        Done
+      </button>
+      <button className={styles.btnDelete} onClick={closeCart}>
+        &times;
+      </button>
     </section>
   );
 }
