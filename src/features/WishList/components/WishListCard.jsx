@@ -18,6 +18,13 @@ function WishListCard({ obj }) {
     dispatch(setIsShow(addObj));
   }
 
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.keyCode === 27) {
+      // console.log("pressed");
+      dispatch(setIsShow(false));
+    }
+  });
+
   return (
     <div className={styles.wishlistCard}>
       <img src={assets.women} alt="women" />
