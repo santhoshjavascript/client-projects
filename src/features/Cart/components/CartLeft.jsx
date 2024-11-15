@@ -6,25 +6,22 @@ import { useState, useEffect } from "react";
 import {
   deletingCart,
   setAmount,
+  setAddCart,
 } from "../../../components/ProductCard/product.Slice";
 
 function CartLeft() {
-  const { addCart } = useSelector((current) => current.product);
+  const { addCart, amount } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
-  const totalAmount = addCart.reduce((acc, cur) => {
-    return acc + cur.price;
-  }, 0);
+  useEffect(() => {
+    const updatedTotalAmount = addCart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    dispatch(setAmount({ amount: updatedTotalAmount }));
+  }, [addCart, dispatch]);
 
-  const { amount } = useSelector((current) => current.product);
-
-  console.log(amount);
-
-  if (Object.keys(amount).length === 0) {
-    dispatch(setAmount({ amount: totalAmount }));
-  }
-  // Initialize quantities from the addCart state
-  const [quantity, setQuantities] = useState(
+  const [quantities, setQuantities] = useState(
     addCart.map((item) => item.quantity)
   );
 
@@ -32,50 +29,48 @@ function CartLeft() {
     setQuantities(addCart.map((item) => item.quantity));
   }, [addCart]);
 
-  function incrementFn(index) {
-    setQuantities((prevQuantities) => {
-      const newQuantities = [...prevQuantities];
-      newQuantities[index] += 1;
-      const updatedTotalPrice = addCart.reduce((acc, el, idx) => {
-        return acc + el.price * newQuantities[idx];
-      }, 0);
-      dispatch(setAmount({ amount: updatedTotalPrice }));
-      return newQuantities;
-    });
-  }
+  const incrementFn = (index) => {
+    const updatedQuantities = [...quantities];
+    updatedQuantities[index] += 1;
+    setQuantities(updatedQuantities);
 
-  function decrementFn(index) {
-    setQuantities((prevQuantities) => {
-      const newQuantities = [...prevQuantities];
-      if (newQuantities[index] > 1) {
-        newQuantities[index] -= 1;
-      }
-      const updatedTotalPrice = addCart.reduce((acc, el, idx) => {
-        return acc + el.price * newQuantities[idx];
-      }, 0);
-      dispatch(setAmount({ amount: updatedTotalPrice }));
-      return newQuantities;
-    });
-  }
+    const updatedItem = {
+      ...addCart[index],
+      quantity: updatedQuantities[index],
+    };
+    dispatch(setAddCart(updatedItem));
+  };
 
-  function handleInputChange(e, index) {
-    const value = Number(e.target.value);
-    if (value >= 1) {
-      setQuantities((prevQuantities) => {
-        const newQuantities = [...prevQuantities];
-        newQuantities[index] = value;
-        const updatedTotalPrice = addCart.reduce((acc, el, idx) => {
-          return acc + el.price * newQuantities[idx];
-        }, 0);
-        dispatch(setAmount({ amount: updatedTotalPrice }));
-        return newQuantities;
-      });
+  const decrementFn = (index) => {
+    if (quantities[index] > 1) {
+      const updatedQuantities = [...quantities];
+      updatedQuantities[index] -= 1;
+      setQuantities(updatedQuantities);
+
+      const updatedItem = {
+        ...addCart[index],
+        quantity: updatedQuantities[index],
+      };
+      dispatch(setAddCart(updatedItem));
     }
-  }
+  };
 
-  function deleteAddCartItem(selectedItem) {
-    dispatch(deletingCart(selectedItem));
-  }
+  const handleInputChange = (e, index) => {
+    const value = Math.max(1, Number(e.target.value));
+    const updatedQuantities = [...quantities];
+    updatedQuantities[index] = value;
+    setQuantities(updatedQuantities);
+
+    const updatedItem = {
+      ...addCart[index],
+      quantity: updatedQuantities[index],
+    };
+    dispatch(setAddCart(updatedItem));
+  };
+
+  const deleteAddCartItem = (item) => {
+    dispatch(deletingCart(item));
+  };
 
   return (
     <div className={styles.cartLeft}>
@@ -91,7 +86,7 @@ function CartLeft() {
             </tr>
           </thead>
           <tbody>
-            {addCart.map((el, index) => (
+            {addCart.map((item, index) => (
               <tr key={index} className={styles.productRow}>
                 <td>
                   <div className={styles.productCardItem}>
@@ -103,7 +98,7 @@ function CartLeft() {
                       <Link to="/">Mantilla Lace Sleeveless Dress Tees</Link>
                       <div className={styles.optionBox}>
                         <span>Color: Black</span>
-                        <span>Size: {el.size}</span>
+                        <span>Size: {item.size}</span>
                         <span className={styles.addToWishList}>
                           <ion-icon name="heart-outline"></ion-icon>
                           Add to wishlist
@@ -118,15 +113,15 @@ function CartLeft() {
                     <input
                       type="number"
                       onChange={(e) => handleInputChange(e, index)}
-                      value={quantity[index]}
+                      value={quantities[index]}
                     />
                     <button onClick={() => incrementFn(index)}>+</button>
                   </div>
                 </td>
-                <td>Rs.${el.price * quantity[index]}</td>
+                <td>Rs.${item.price * quantities[index]}</td>
                 <td>
                   <button
-                    onClick={() => deleteAddCartItem(el)}
+                    onClick={() => deleteAddCartItem(item)}
                     className={styles.btnDelete}
                   >
                     &times;
@@ -136,6 +131,9 @@ function CartLeft() {
             ))}
           </tbody>
         </table>
+        <div className={styles.totalAmount}>
+          <strong>Total: Rs.{amount.total}</strong>
+        </div>
       </div>
     </div>
   );

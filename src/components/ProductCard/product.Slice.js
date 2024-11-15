@@ -11,7 +11,7 @@ const initialState = {
   isShow: false,
   derssSize: "",
   addCart: [],
-  amount: {},
+  amount: { total: 0 }, // Initialize amount with total
 };
 
 const productSlice = createSlice({
@@ -140,28 +140,42 @@ const productSlice = createSlice({
         // Item doesn't exist, add it to the cart with quantity 1
         state.addCart = [...state.addCart, { ...newItem, quantity: 1 }];
       }
+
+      // Recalculate the total amount
+      const updatedTotal = state.addCart.reduce((acc, cur) => {
+        return acc + cur.price * cur.quantity;
+      }, 0);
+      state.amount = { total: updatedTotal };
     },
 
     setAmount(state, action) {
-      state.amount = { total: action.payload.amount };
+      state.amount = { total: action.payload.amount }; // Adjust amount to be an object with 'total'
     },
 
     deletingCart(state, action) {
+      // Remove the item from the cart based on the ID
       state.addCart = state.addCart.filter((el) => el.id !== action.payload.id);
-      const currentTotal = state.addCart.reduce((acc, cur) => {
-        return acc + cur.price;
+
+      // Recalculate the total amount after the item is deleted
+      const updatedTotal = state.addCart.reduce((acc, cur) => {
+        return acc + cur.price * cur.quantity;
       }, 0);
 
-      state.amount = currentTotal;
+      // Update the amount with the new total
+      state.amount = { total: updatedTotal };
 
+      // If the cart is empty, set the total to 0
       if (state.addCart.length === 0) {
-        state.amount = 0;
+        state.amount = { total: 0 }; // Reset the total if the cart is empty
       }
+
+      // Log the updated state for debugging purposes
+      console.log("Updated Cart:", state.addCart);
+      console.log("Updated Total Amount:", state.amount.total);
     },
 
     setError(state, action) {
       console.log(action.payload);
-
       state.error = action.payload;
       state.loading = false;
     },
