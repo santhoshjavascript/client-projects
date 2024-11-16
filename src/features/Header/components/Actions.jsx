@@ -55,8 +55,12 @@ function Actions() {
             />
           </svg>
         </NavLink>
+
         {/* Add to card  */}
-        <NavLink to={"/cart"}>
+        <NavLink
+          to={"/cart"}
+          className={({ isActive }) => (isActive ? styles.activeLink : "")}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

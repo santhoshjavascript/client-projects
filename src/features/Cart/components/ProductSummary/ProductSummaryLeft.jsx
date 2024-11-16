@@ -1,15 +1,15 @@
-import styles from "./Cart.module.css";
+import styles from "./ProductSummary.module.css";
 import { Link } from "react-router-dom";
-import { assets } from "../../../assets/assets";
+import { assets } from "../../../../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import {
   deletingCart,
   setAmount,
   setAddCart,
-} from "../../../components/ProductCard/product.Slice";
+} from "../../../../components/ProductCard/product.Slice";
 
-function CartLeft() {
+function ProductSummaryLeft() {
   const { addCart, amount } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
@@ -82,7 +82,6 @@ function CartLeft() {
               <th className={styles.product}>Product</th>
               <th className={styles.price}>Quantity</th>
               <th className={styles.quantity}>Total</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -131,12 +130,9 @@ function CartLeft() {
             ))}
           </tbody>
         </table>
-        <div className={styles.totalAmount}>
-          <strong>Total: Rs.{amount.total}</strong>
-        </div>
       </div>
     </div>
   );
 }
 
-export default CartLeft;
+export default ProductSummaryLeft;
