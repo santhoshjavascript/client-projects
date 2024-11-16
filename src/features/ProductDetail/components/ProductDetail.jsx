@@ -1,6 +1,6 @@
 import styles from "./ProductDetail.module.css";
 import SubProductDetails from "./SubProductDetails";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,25 +14,16 @@ function ProductDetail() {
   const { id } = useParams();
   const { productView } = useSelector((currennt) => currennt.product);
   const dispatch = useDispatch();
+  const { product } = useLoaderData();
 
   useEffect(() => {
-    async function mounted() {
-      try {
-        dispatch(setLoading());
-        const res = await fetch(`${BASE_URL}/${id}`);
-        if (!res.ok) throw new Error("Network fetching error");
-        const data = await res.json();
-        dispatch(selectedProduct(data));
-      } catch (error) {
-        console.log(error.message);
-      }
-    }
-    mounted();
+    dispatch(selectedProduct(product));
+    console.log(product);
 
     return () => {
       dispatch(clearItem());
     };
-  }, [id, dispatch]);
+  }, [id, dispatch, product]);
 
   if (!productView) return;
 
@@ -99,5 +90,4 @@ function ProductDetail() {
 
 //   return <h1>Content</h1>;
 // }
-
 export default ProductDetail;

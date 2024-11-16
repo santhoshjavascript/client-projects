@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
 import { setError, setItems, setLoading } from "../redux/product.Slice";
+import { useLoaderData } from "react-router-dom";
 
 const BASE_URL = "https://fakestoreapi.com/products";
 
@@ -13,24 +14,13 @@ function ProductList({ type }) {
   const { items, loading } = useSelector((current) => current.product);
   const dispatch = useDispatch();
 
+  const { home } = useLoaderData();
+
   useEffect(
     function () {
-      async function fetchProducts() {
-        try {
-          dispatch(setLoading());
-          const res = await fetch(BASE_URL);
-          if (!res.ok) throw new Error("Something wrong happened");
-          const data = await res.json();
-
-          dispatch(setItems(data));
-        } catch (err) {
-          console.error(err.message);
-          dispatch(setError(err.message));
-        }
-      }
-      fetchProducts();
+      dispatch(setItems(home));
     },
-    [dispatch]
+    [dispatch, home]
   );
 
   if (loading) return <div> Loading .... </div>;

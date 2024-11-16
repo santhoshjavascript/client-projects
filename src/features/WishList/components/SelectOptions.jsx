@@ -46,13 +46,12 @@ function SelectOptions() {
           <p>StyleCast Men without Crop Bomber with Patchwork Jacket</p>
           <ProductPrice price="4,233" offPrice="5,234" offPercentage="10" />
         </div>
-        <div
-          onClick={closeCart}
+        {/* <div
           className={styles.size}
           style={{ backgroundColor: "red", color: "white" }}
         >
           close
-        </div>
+        </div> */}
       </div>
       <aside className={styles.sizeBox}>
         <p>Select Size</p>
@@ -72,6 +71,9 @@ function SelectOptions() {
       </aside>
       <button className={styles.btnDone} onClick={addToCart}>
         Done
+      </button>
+      <button className={styles.btnDelete} onClick={closeCart}>
+        &times;
       </button>
     </section>
   );

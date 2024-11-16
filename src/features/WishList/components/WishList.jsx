@@ -1,6 +1,4 @@
 import { useSelector } from "react-redux";
-import Footer from "../../Footer/components/Footer";
-import NavBar from "../../Header/components/NavBar";
 import styles from "./WishList.module.css";
 import WishListCard from "./WishListCard";
 import SelectOptions from "./SelectOptions";
@@ -12,8 +10,6 @@ function WishList() {
 
   return (
     <>
-      <NavBar />
-
       <div className={styles.wishlist}>
         <p className={styles.myWishList}>My WishList</p>
         {wishList.length === 0 ? (
@@ -34,7 +30,6 @@ function WishList() {
         ></div>
         <SelectOptions />
       </div>
-      <Footer />
     </>
   );
 }
