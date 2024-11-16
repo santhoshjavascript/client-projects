@@ -11,9 +11,9 @@ function Cart() {
     setStep(step + 1);
   }
 
-  function prevStep() {
-    setStep(step - 1);
-  }
+  // function prevStep() {
+  //   setStep(step - 1);
+  // }
 
   return (
     <div>
