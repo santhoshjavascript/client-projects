@@ -2,10 +2,9 @@ import styles from "./AddressForm.module.css";
 import LogoName from "../../../../components/Logo";
 import { useState } from "react";
 import LeftSide from "./LeftSide";
-import { Link } from "react-router-dom";
 
 function AddressForm({ nextStep }) {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive] = useState(false);
 
   // function handleActive() {
   //   setIsActive(!isActive);
