@@ -6,10 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   clearItem,
   selectedProduct,
-  setLoading,
+  // setLoading,
 } from "../../../components/ProductCard/product.Slice";
 
-const BASE_URL = "http://localhost:9000/products";
+// const BASE_URL = "http://localhost:9000/products";
+
 function ProductDetail() {
   const { id } = useParams();
   const { productView } = useSelector((currennt) => currennt.product);
@@ -42,7 +43,7 @@ function ProductDetail() {
         <img
           src={productView.thumbnail}
           alt="main shoe"
-          className={styles.mainShoe}
+          className={styles.mainImage}
         />
       </div>
       <SubProductDetails />

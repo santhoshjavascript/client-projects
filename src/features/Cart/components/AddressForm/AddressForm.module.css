@@ -1,0 +1,243 @@
+.addressFormBox {
+  background-color: #f4f4f4;
+  height: 100vh;
+}
+
+.checkHeader {
+  background-color: #fff;
+  padding: 2.4rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
+  margin: 0 auto 2.4rem auto;
+  max-width: 90rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.checkHeader ul {
+  display: flex;
+  text-transform: uppercase;
+  color: #696b79;
+}
+
+.step {
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  margin-right: 1.4rem;
+}
+
+.checkHeader ul .step:nth-child(3) {
+  margin: 0 1.4rem;
+}
+
+.checkHeader ul .step:last-child {
+  margin: 0 0 0 1.4rem;
+}
+
+.divider {
+  display: inline-block;
+  border-top: 1px dashed #696b79;
+  height: 0;
+  width: 2.8rem;
+  margin: auto 0;
+}
+
+.step.stepActive {
+  color: #000;
+}
+
+/* Details */
+
+.summaryBody {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1.2rem;
+  margin: 0 auto 0 auto;
+  max-width: 90rem;
+}
+
+.leftSide {
+  background-color: #fff;
+  font-size: 1.4rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+}
+
+.leftSide .itemDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.leftSide .itemDetail li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.leftSide .itemDetail li:first-child {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.leftSide .itemDetail .product,
+.leftSide .itemDetail .summaryCard {
+  flex: 1;
+}
+
+.leftSide .itemDetail .price,
+.leftSide .itemDetail .quantity {
+  flex: 0 0 auto;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.leftSide .itemDetail li:nth-child(2) .quantity {
+  margin-right: 1.9rem;
+}
+
+.cartTotalBox h3 {
+  font-size: 2rem;
+  font-weight: 450;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cartTotalBox .total {
+  margin-top: 1.6rem;
+}
+
+.cartTotalBox .total li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  color: #6e6e6e;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+/* Right Side */
+.grandTotal,
+.addressBox,
+.formContainer {
+  padding: 2.2rem 1.8rem;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  height: auto;
+}
+
+.grandTotal,
+.addressBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.grandTotal {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.grandTotal ion-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.grandTotal p:nth-child(2) {
+  flex: 1;
+  margin-left: 1.4rem;
+}
+
+.addressBox {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.addressBox .delivery,
+.addressBox .addressLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.addressBox .addressLink {
+  text-decoration: none;
+  color: #339af0;
+}
+
+.formContainer {
+  overflow-y: hidden;
+}
+
+.formContainer h3 {
+  font-size: 1.4rem;
+  font-weight: 450;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.formContainer fieldset {
+  border: none;
+}
+
+.formContainer .field .fieldsetDivider {
+  margin: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.formContainer .personalDetails {
+  background: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 0.75rem;
+  text-transform: uppercase;
+  padding: 0px 0.5rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.formContainer .field .fieldsetDivider:after {
+  content: "";
+  position: absolute;
+  width: auto;
+  left: -3.5rem;
+  right: -3.5rem;
+  border-bottom: 1px solid #ccc;
+  bottom: 7px;
+  z-index: -1;
+}
+
+.formContainer .field .inputRow {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* gap: 1.4rem; */
+  margin-bottom: 1.6rem;
+  width: 100%;
+}
+
+.formContainer .field .inputRow div label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.formContainer .field .inputRow div label span {
+  color: red;
+}
+
+.formContainer .field .inputRow div input {
+  width: 80%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+}

@@ -5,11 +5,13 @@ import Spinner from "../components/Spinner/Spinner";
 
 export default function AppLayOut() {
   const navigate = useNavigation();
+
   const location = useLocation();
 
   const noHeaderFooterRoutes = ["/product"];
 
   const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
+
 
   if (navigate.state === "loading") return <Spinner />;
 

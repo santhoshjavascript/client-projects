@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
-import styles from "./Cart.module.css";
+import styles from "./ProductSummary.module.css";
 
-function CartRight() {
+function ProductSummaryRight({ nextStep }) {
   const { amount } = useSelector((current) => current.product);
-  console.log("SubTotal", amount.total);
 
   return (
     <div className={styles.cartRight}>
@@ -32,10 +31,12 @@ function CartRight() {
           <textarea id="story" name="story" rows="5" cols="33"></textarea>
         </form>
 
-        <button className={styles.btnCheckout}>checkout</button>
+        <button className={styles.btnCheckout} onClick={nextStep}>
+          place order
+        </button>
       </aside>
     </div>
   );
 }
 
-export default CartRight;
+export default ProductSummaryRight;

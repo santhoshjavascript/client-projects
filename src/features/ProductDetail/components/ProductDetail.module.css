@@ -7,7 +7,7 @@
 
 .productDesigns {
   display: flex;
-  height: 70%;
+  /* height: 70%; */
   flex-direction: column;
   gap: 4.6rem;
   justify-content: center;
@@ -19,11 +19,18 @@
   height: auto;
 }
 
+.productImage {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  object-fit: contain;
+}
+
 .image {
   width: 100%;
 }
 
-.mainShoe {
+.mainImage {
   width: 100%;
   height: auto;
 }
