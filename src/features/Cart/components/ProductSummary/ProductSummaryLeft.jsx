@@ -8,6 +8,7 @@ import {
   setAmount,
   setAddCart,
 } from "../../../../components/ProductCard/product.Slice";
+import SummaryCard from "../../../../components/SummaryCard/SummaryCard";
 
 function ProductSummaryLeft() {
   const { addCart, amount } = useSelector((state) => state.product);
@@ -88,23 +89,7 @@ function ProductSummaryLeft() {
             {addCart.map((item, index) => (
               <tr key={index} className={styles.productRow}>
                 <td>
-                  <div className={styles.productCardItem}>
-                    <div className={styles.imgBox}>
-                      <img src={assets.women} alt="Product" />
-                    </div>
-                    <div className={styles.contentBox}>
-                      <span className={styles.brandName}>nextgen</span>
-                      <Link to="/">Mantilla Lace Sleeveless Dress Tees</Link>
-                      <div className={styles.optionBox}>
-                        <span>Color: Black</span>
-                        <span>Size: {item.size}</span>
-                        <span className={styles.addToWishList}>
-                          <ion-icon name="heart-outline"></ion-icon>
-                          Add to wishlist
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <SummaryCard size="large" item={item} />
                 </td>
                 <td className={styles.priceInput}>
                   <div className={styles.priceWrapper}>

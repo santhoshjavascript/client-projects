@@ -5,7 +5,6 @@ import Spinner from "../components/Spinner/Spinner";
 
 export default function AppLayOut() {
   const navigate = useNavigation();
-  console.log(navigate);
 
   if (navigate.state === "loading") return <Spinner />;
 

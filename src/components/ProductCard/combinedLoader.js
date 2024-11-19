@@ -23,7 +23,7 @@ export async function combinedLoader({ params }) {
 
 export async function sliderLoader() {
   try {
-    const sliderResponse = await fetch(BASE_URL);
+    const sliderResponse = await fetch(SLIDER_URL);
     if (!sliderResponse.ok) throw new Error("Error fetching slider data");
     const sliderData = await sliderResponse.json();
     return { home: sliderData };
