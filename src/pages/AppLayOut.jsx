@@ -1,19 +1,23 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import Footer from "../features/Footer/components/Footer";
 import NavBar from "../features/Header/components/NavBar";
 import Spinner from "../components/Spinner/Spinner";
 
 export default function AppLayOut() {
   const navigate = useNavigation();
-  console.log(navigate);
+  const location = useLocation();
+
+  const noHeaderFooterRoutes = ["/product"];
+
+  const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
 
   if (navigate.state === "loading") return <Spinner />;
 
   return (
     <div>
-      <NavBar />
+      {!hideHeaderFooter && <NavBar />}
       <Outlet />
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 }
