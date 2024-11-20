@@ -7,7 +7,7 @@ export default function AppLayOut() {
   const navigate = useNavigation();
   const location = useLocation();
 
-  const noHeaderFooterRoutes = ["/product"];
+  const noHeaderFooterRoutes = ["/cart"];
 
   const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
 
