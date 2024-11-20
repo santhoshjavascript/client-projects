@@ -1,0 +1,129 @@
+.productCardItem {
+  display: flex;
+}
+
+.productCardItem.large {
+  max-width: 43rem;
+}
+
+.productCardItem.small {
+  /* max-width: 30rem; */
+  flex: 1;
+}
+
+.imgBox.large {
+  max-width: 10rem;
+  margin-right: 3rem;
+}
+
+.imgBox.small {
+  max-width: 8rem;
+  margin-right: 1.5rem;
+}
+
+.imgBox img {
+  height: 100%;
+}
+
+.imgBox.large img {
+  width: 100%;
+}
+
+.imgBox.small img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.brandName {
+  color: #333;
+  text-transform: uppercase;
+}
+
+.brandName.large {
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.brandName.small {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.contentBox {
+  text-transform: uppercase;
+}
+
+.contentBox.large {
+  padding-block: 2.4rem;
+}
+
+.contentBox.small {
+  padding-block: 1rem;
+}
+
+.contentBox span,
+.contentBox a {
+  display: block;
+}
+
+.contentBox a:link,
+.contentBox a:visited {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  max-width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: none;
+  transition: all 0.2s;
+}
+
+.contentBox.large a:link,
+.contentBox.large a:visited {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contentBox.small a:link,
+.contentBox.small a:visited {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.contentBox a:hover {
+  color: #808080;
+}
+
+.optionBox {
+  text-transform: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionBox.large {
+  font-size: 1.2rem;
+  gap: 0.8rem;
+}
+
+.optionBox.small {
+  font-size: 1.1rem;
+  gap: 0.4rem;
+}
+
+.optionBox span:nth-child(3) {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.optionBox.large span:nth-child(3) {
+  font-size: 1.3rem;
+  margin-top: 0.6rem;
+}
+
+.optionBox.small span:nth-child(3) {
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}

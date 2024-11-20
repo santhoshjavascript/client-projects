@@ -102,8 +102,12 @@
   color: #525252;
 }
 
-.activeLink {
-  color: #525252;
+.icon:hover {
+  color: #000;
+}
+
+.activeLink .icon {
+  stroke: #000;
 }
 
 .menuList {
