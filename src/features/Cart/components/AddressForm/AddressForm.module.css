@@ -213,31 +213,39 @@
   left: -3.5rem;
   right: -3.5rem;
   border-bottom: 1px solid #ccc;
-  bottom: 7px;
+  bottom: 5.8px;
   z-index: -1;
 }
 
 .formContainer .field .inputRow {
   display: grid;
-  grid-template-columns: 50% 50%;
-  /* gap: 1.4rem; */
   margin-bottom: 1.6rem;
   width: 100%;
 }
 
-.formContainer .field .inputRow div label {
-  font-size: 1.2rem;
+.formContainer .field .inputRow.grid2Cols {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1rem;
   display: block;
 }
 
-.formContainer .field .inputRow div label span {
+.starIcon {
   color: red;
 }
 
-.formContainer .field .inputRow div input {
-  width: 80%;
+.input {
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
+}
+
+.addressChild {
+  margin-bottom: 2.4rem;
 }

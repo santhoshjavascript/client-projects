@@ -90,10 +90,10 @@ function AddressForm({ nextStep }) {
                   <div className={styles.personalDetails}>personal details</div>
                 </div>
 
-                <div className={styles.inputRow}>
+                <div className={`${styles.inputRow} ${styles.grid2Cols}`}>
                   <div>
-                    <label htmlFor="firstName">
-                      firstname <span>*</span>
+                    <label htmlFor="firstName" className={styles.label}>
+                      firstname <span className={styles.starIcon}>*</span>
                     </label>
                     <input
                       type="text"
@@ -105,13 +105,48 @@ function AddressForm({ nextStep }) {
                   </div>
 
                   <div>
-                    <label htmlFor="lastName">
-                      lastname <span>*</span>
+                    <label htmlFor="lastName" className={styles.label}>
+                      lastname <span className={styles.starIcon}>*</span>
                     </label>
                     <input
                       type="text"
                       id="lastName"
                       name="name"
+                      required
+                      className={styles.input}
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset className={styles.field}>
+                <div className={styles.fieldsetDivider}>
+                  <div className={styles.personalDetails}>address</div>
+                </div>
+
+                <div className={styles.inputRow}>
+                  <div className={styles.addressChild}>
+                    <label htmlFor="address" className={styles.label}>
+                      HOUSE NO., BUILDING, ROAD, AREA
+                      <span className={styles.starIcon}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      required
+                      className={styles.input}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="address" className={styles.label}>
+                      locality
+                      <span className={styles.starIcon}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
                       required
                       className={styles.input}
                     />
