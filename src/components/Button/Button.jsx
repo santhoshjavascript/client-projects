@@ -1,6 +1,13 @@
 import styles from "./Button.module.css";
 
-function Button({ bgColor, boxShadow, color, marginBottom, children }) {
+function Button({
+  bgColor,
+  boxShadow,
+
+  color,
+  marginBottom,
+  children,
+}) {
   return (
     <button
       className={styles.btn}

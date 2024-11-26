@@ -37,6 +37,8 @@ import {
   combinedLoader,
   sliderLoader,
 } from "./components/ProductCard/combinedLoader";
+import AddressForm from "./features/Cart/components/AddressForm/AddressForm";
+import ProductSummary from "./features/Cart/components/ProductSummary/ProductSummary";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +56,20 @@ const router = createBrowserRouter([
         loader: combinedLoader,
       },
       { path: "/wishlist", element: <WishList /> },
-      { path: "/cart", element: <CartPage /> },
+      {
+        path: "/cart",
+        element: <CartPage />,
+        children: [
+          {
+            index: true,
+            element: <ProductSummary />,
+          },
+          {
+            path: "address",
+            element: <AddressForm />,
+          },
+        ],
+      },
     ],
   },
 ]);

@@ -8,10 +8,9 @@ export default function AppLayOut() {
 
   const location = useLocation();
 
-  const noHeaderFooterRoutes = ["/product"];
+  const noHeaderFooterRoutes = ["/cart/address"];
 
   const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
-
 
   if (navigate.state === "loading") return <Spinner />;
 
