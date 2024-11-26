@@ -1,50 +1,15 @@
 import styles from "./AddressForm.module.css";
-import LogoName from "../../../../components/Logo";
 import { useState } from "react";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
+import CartHeader from "../CartHeader/CartHeader";
 
 function AddressForm() {
   const [isActive] = useState(false);
 
   return (
     <section className={styles.addressFormBox}>
-      <header className={styles.checkHeader}>
-        <figure>
-          <LogoName />
-        </figure>
-        <ul>
-          <li
-            className={
-              isActive
-                ? `${styles.step} ${styles.stepActive}`
-                : `${styles.step}`
-            }
-          >
-            login
-          </li>
-          <li className={styles.divider}></li>
-          <li
-            className={
-              isActive
-                ? `${styles.step} ${styles.stepActive}`
-                : `${styles.step}`
-            }
-          >
-            address
-          </li>
-          <li className={styles.divider}></li>
-          <li
-            className={
-              isActive
-                ? `${styles.step} ${styles.stepActive}`
-                : `${styles.step}`
-            }
-          >
-            payment
-          </li>
-        </ul>
-      </header>
+      <CartHeader isActive={isActive} />
 
       <article className={styles.summaryBody}>
         <LeftSide />
