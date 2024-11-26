@@ -2,11 +2,11 @@ import styles from "./ProductSummary.module.css";
 import ProductSummaryLeft from "./ProductSummaryLeft";
 import ProductSummaryRight from "./ProductSummaryRight";
 
-function ProductSummary({ nextStep }) {
+function ProductSummary() {
   return (
     <section className={styles.cartBox}>
       <ProductSummaryLeft />
-      <ProductSummaryRight nextStep={nextStep} />
+      <ProductSummaryRight />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./ProductSummary.module.css";
+import { Link } from "react-router-dom";
 
 function ProductSummaryRight({ nextStep }) {
   const { amount } = useSelector((current) => current.product);
@@ -31,9 +32,11 @@ function ProductSummaryRight({ nextStep }) {
           <textarea id="story" name="story" rows="5" cols="33"></textarea>
         </form>
 
-        <button className={styles.btnCheckout} onClick={nextStep}>
-          place order
-        </button>
+        <Link to="address">
+          <button className={styles.btnCheckout} onClick={nextStep}>
+            place order
+          </button>
+        </Link>
       </aside>
     </div>
   );

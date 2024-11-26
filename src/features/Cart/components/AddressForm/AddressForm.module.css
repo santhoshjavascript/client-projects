@@ -1,6 +1,7 @@
 .addressFormBox {
   background-color: #f4f4f4;
-  height: 100vh;
+  padding-bottom: 4.6rem;
+  min-height: 100vh;
 }
 
 .checkHeader {
@@ -22,18 +23,16 @@
   color: #696b79;
 }
 
+/* login steps */
 .step {
   font-size: 1.3rem;
   letter-spacing: 0.1rem;
   margin-right: 1.4rem;
 }
 
-.checkHeader ul .step:nth-child(3) {
-  margin: 0 1.4rem;
-}
-
+.checkHeader ul .step:nth-child(3),
 .checkHeader ul .step:last-child {
-  margin: 0 0 0 1.4rem;
+  margin: 0 1.4rem;
 }
 
 .divider {
@@ -41,20 +40,23 @@
   border-top: 1px dashed #696b79;
   height: 0;
   width: 2.8rem;
+  padding-bottom: 0.4rem;
   margin: auto 0;
 }
 
 .step.stepActive {
-  color: #000;
+  color: #019e43;
+  font-weight: 500;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #019e43;
 }
+/* end of login steps */
 
 /* Details */
-
 .summaryBody {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
   gap: 1.2rem;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   max-width: 90rem;
 }
 
@@ -63,6 +65,8 @@
   font-size: 1.4rem;
   padding: 1.6rem;
   border-radius: 0.8rem;
+  flex: 1;
+  height: min-content;
 }
 
 .leftSide .itemDetail {
@@ -123,8 +127,12 @@
 }
 
 /* Right Side */
+.rightSide {
+  flex: 1;
+}
+
 .grandTotal,
-.addressBox,
+.addAddressBox,
 .formContainer {
   padding: 2.2rem 1.8rem;
   background-color: #fff;
@@ -133,7 +141,7 @@
 }
 
 .grandTotal,
-.addressBox {
+.addAddressBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,26 +164,40 @@
   margin-left: 1.4rem;
 }
 
-.addressBox {
+.addAddressBox {
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: capitalize;
 }
 
-.addressBox .delivery,
-.addressBox .addressLink {
+.addAddressBox .delivery,
+.addAddressBox .addressLink {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.addressBox .addressLink {
+.addAddressBox .addressLink {
+  cursor: pointer;
   text-decoration: none;
-  color: #339af0;
+  color: #019e43;
 }
 
+/* form container */
 .formContainer {
   overflow-y: hidden;
+  display: none;
+  transform: translateY(-100%);
+}
+
+.formContainer.active {
+  display: block;
+  transform: translateY(0%);
+  transition: transform 0.3s;
+}
+
+.formContainer.active ~ .addAddressBox {
+  display: none;
 }
 
 .formContainer h3 {
@@ -190,7 +212,7 @@
 }
 
 .formContainer .field .fieldsetDivider {
-  margin: 1.6rem;
+  margin: 1.6rem 1.6rem 2.4rem 1.6rem;
   position: relative;
   z-index: 1;
 }
@@ -201,7 +223,7 @@
   font-size: 1rem;
   line-height: 0.75rem;
   text-transform: uppercase;
-  padding: 0px 0.5rem;
+  padding: 0 0.5rem;
   color: #000;
   font-weight: 600;
 }
@@ -213,31 +235,65 @@
   left: -3.5rem;
   right: -3.5rem;
   border-bottom: 1px solid #ccc;
-  bottom: 7px;
+  bottom: 5.8px;
   z-index: -1;
 }
 
 .formContainer .field .inputRow {
   display: grid;
-  grid-template-columns: 50% 50%;
-  /* gap: 1.4rem; */
   margin-bottom: 1.6rem;
   width: 100%;
 }
 
-.formContainer .field .inputRow div label {
-  font-size: 1.2rem;
+.formContainer .field .inputRow.grid2Cols {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1rem;
   display: block;
 }
 
-.formContainer .field .inputRow div label span {
+.starIcon {
   color: red;
 }
 
-.formContainer .field .inputRow div input {
-  width: 80%;
+.input {
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
+}
+
+.addressChild {
+  margin-bottom: 2.4rem;
+}
+
+.radioBox {
+  display: flex;
+  gap: 3.6rem;
+  font-size: 1rem;
+  font-weight: 450;
+  text-transform: uppercase;
+}
+
+.radioBox div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.radioBox div label {
+  display: block;
+}
+
+.formContainer button {
+  padding: 1.2rem 2.4rem;
+  margin-top: 3.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
 }
