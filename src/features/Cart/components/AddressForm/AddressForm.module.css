@@ -4,54 +4,6 @@
   min-height: 100vh;
 }
 
-.checkHeader {
-  background-color: #fff;
-  padding: 2.4rem;
-  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
-  margin: 0 auto 2.4rem auto;
-  max-width: 90rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
-}
-
-.checkHeader ul {
-  display: flex;
-  text-transform: uppercase;
-  color: #696b79;
-}
-
-/* login steps */
-.step {
-  font-size: 1.3rem;
-  letter-spacing: 0.1rem;
-  margin-right: 1.4rem;
-}
-
-.checkHeader ul .step:nth-child(3),
-.checkHeader ul .step:last-child {
-  margin: 0 1.4rem;
-}
-
-.divider {
-  display: inline-block;
-  border-top: 1px dashed #696b79;
-  height: 0;
-  width: 2.8rem;
-  padding-bottom: 0.4rem;
-  margin: auto 0;
-}
-
-.step.stepActive {
-  color: #019e43;
-  font-weight: 500;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid #019e43;
-}
-/* end of login steps */
-
 /* Details */
 .summaryBody {
   display: flex;

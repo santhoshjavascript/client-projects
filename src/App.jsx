@@ -39,6 +39,7 @@ import {
 } from "./components/ProductCard/combinedLoader";
 import AddressForm from "./features/Cart/components/AddressForm/AddressForm";
 import ProductSummary from "./features/Cart/components/ProductSummary/ProductSummary";
+import Checkout from "./features/Cart/components/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
           {
             path: "address",
             element: <AddressForm />,
+          },
+          {
+            path: "checkout",
+            element: <Checkout />,
           },
         ],
       },
