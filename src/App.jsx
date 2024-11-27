@@ -40,11 +40,13 @@ import {
 import AddressForm from "./features/Cart/components/AddressForm/AddressForm";
 import ProductSummary from "./features/Cart/components/ProductSummary/ProductSummary";
 import Checkout from "./features/Cart/components/Checkout/Checkout";
+import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   {
     element: <AppLayOut />,
     children: [
+      { path: "/login", element: <LoginPage /> },
       { path: "/", element: <Home />, loader: sliderLoader },
       {
         path: "/product",
