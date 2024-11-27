@@ -17,6 +17,7 @@ import shoe4 from "./shoe-4.jpg";
 import shoe5 from "./shoe-5.jpg";
 import shoe6 from "./shoe-6.jpg";
 import transShoe from "./transparent-shoe.png";
+import google from "./google-icon.svg";
 
 export const assets = {
   logo,
@@ -33,4 +34,5 @@ export const assets = {
   women,
   shoes: [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6],
   transShoe,
+  google,
 };

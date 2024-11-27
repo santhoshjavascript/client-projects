@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Form.module.css";
 import Icons from "./Icons";
 import { Navigate } from "react-router-dom";
-import { signUp as signUpAction } from "../redux/user.Slice"; // Import the signUp action correctly
+import { signUp as signUpAction } from "../redux/user.Slice";
 import { useDispatch, useSelector } from "react-redux";
 
 function SignUp() {
@@ -47,8 +47,6 @@ function SignUp() {
       isAuthenticated
     );
   }
-
-  console.log(isAuthenticated);
 
   if (isAuthenticated) return <Navigate to="/home" />;
 
