@@ -41,12 +41,21 @@ import AddressForm from "./features/Cart/components/AddressForm/AddressForm";
 import ProductSummary from "./features/Cart/components/ProductSummary/ProductSummary";
 import Checkout from "./features/Cart/components/Checkout/Checkout";
 import LoginPage from "./pages/LoginPage";
+import SignIn from "./features/authentication/components/SignIn";
+import SignUp from "./features/authentication/components/SignUp";
 
 const router = createBrowserRouter([
   {
     element: <AppLayOut />,
     children: [
-      { path: "/login", element: <LoginPage /> },
+      {
+        path: "/login",
+        element: <LoginPage />,
+        children: [
+          { element: <SignIn />, index: true },
+          { path: "signup", element: <SignUp /> },
+        ],
+      },
       { path: "/", element: <Home />, loader: sliderLoader },
       {
         path: "/product",
