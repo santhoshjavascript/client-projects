@@ -1,6 +1,6 @@
 import styles from "./ProductSummary.module.css";
-import { Link } from "react-router-dom";
-import { assets } from "../../../../assets/assets";
+// import { Link } from "react-router-dom";
+// import { assets } from "../../../../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import {
@@ -11,7 +11,7 @@ import {
 import SummaryCard from "../../../../components/SummaryCard/SummaryCard";
 
 function ProductSummaryLeft() {
-  const { addCart, amount } = useSelector((state) => state.product);
+  const { addCart } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   useEffect(() => {

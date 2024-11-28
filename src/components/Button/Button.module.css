@@ -10,6 +10,7 @@
 .btn.sm {
   padding: 1.6rem 2.2rem;
   font-size: 1.5rem;
+  margin-top: 1.4rem;
 }
 
 .btn.sm:hover {
