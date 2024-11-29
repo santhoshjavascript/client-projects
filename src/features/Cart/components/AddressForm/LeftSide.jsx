@@ -15,6 +15,11 @@ function LeftSide() {
           <div className={styles.quantity}>1</div>
           <div className={styles.price}>1,444</div>
         </li>
+        <li>
+          <SummaryCard size="small" className={styles.summaryCard} />
+          <div className={styles.quantity}>1</div>
+          <div className={styles.price}>1,444</div>
+        </li>
       </ul>
       <div className={styles.cartTotalBox}>
         <h3>total</h3>

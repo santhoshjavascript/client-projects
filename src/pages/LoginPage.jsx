@@ -1,28 +1,12 @@
-import { useState } from "react";
-import styles from "../features/authentication/components/Form.module.css";
-import SignUp from "../features/authentication/components/SignUp";
-import SignIn from "../features/authentication/components/SignIn";
-import Welcome from "../features/authentication/components/Welcome";
+import { Outlet } from "react-router-dom";
+import styles from "../features/authentication/components/login.module.css";
 
-function Form() {
-  const [isActive, setIsActive] = useState(false);
-
-  function handleClick() {
-    setIsActive(!isActive);
-  }
-
+function LoginPage() {
   return (
-    <div
-      className={`${styles.container} ${
-        isActive ? styles.rightPanelActive : ""
-      }`}
-      id="container"
-    >
-      <SignUp />
-      <SignIn />
-      <Welcome handleClick={handleClick} />
+    <div className={styles.container}>
+      <Outlet />
     </div>
   );
 }
 
-export default Form;
+export default LoginPage;

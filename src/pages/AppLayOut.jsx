@@ -12,7 +12,6 @@ export default function AppLayOut() {
 
   const hideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
 
-
   if (navigate.state === "loading") return <Spinner />;
 
   return (

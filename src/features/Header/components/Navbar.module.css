@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Devonshire&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Devonshire&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
   font-family: "Devans";
   src: url("../../../fonts/Devans.otf") format("truetype");
   font-weight: 400;
-}
+} */
 
 .header {
   position: sticky;
@@ -29,9 +29,9 @@
 
 .logoName {
   font-size: 4rem;
-  font-family: "Devans", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.4rem;
+  /* font-family: "Devans", sans-serif; */
+  font-weight: 600;
+  letter-spacing: 0.3rem;
 }
 
 .input {

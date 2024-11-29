@@ -1,10 +1,9 @@
-// import Footer from "../features/Footer/components/Footer"
-import Cart from "../features/Cart/components/Cart";
+import { Outlet } from "react-router-dom";
 
 function CartPage() {
   return (
     <div>
-      <Cart />
+      <Outlet />
     </div>
   );
 }
