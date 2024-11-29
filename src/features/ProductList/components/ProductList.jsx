@@ -7,9 +7,11 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../redux/product.Slice";
 import { useLoaderData } from "react-router-dom";
+import SelectOptions from "../../WishList/components/SelectOptions";
 
 function ProductList({ type }) {
-  const { items, loading } = useSelector((current) => current.product);
+  const { items, isShow } = useSelector((current) => current.product);
+
   const dispatch = useDispatch();
 
   const { home } = useLoaderData();
@@ -20,8 +22,6 @@ function ProductList({ type }) {
     },
     [dispatch, home]
   );
-
-  if (loading) return <div> Loading .... </div>;
 
   return (
     <div className={styles.productContainer}>
@@ -41,10 +41,15 @@ function ProductList({ type }) {
       >
         {items.map((item) => (
           <SwiperSlide key={item.id}>
-            <ProductItem product={item} />
+            <ProductItem currntObj={item} />
           </SwiperSlide>
         ))}
       </Swiper>
+      <div
+        className={styles.overlay}
+        style={{ display: isShow ? "block" : "none" }}
+      ></div>
+      <SelectOptions />
     </div>
   );
 }

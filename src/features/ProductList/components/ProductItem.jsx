@@ -2,10 +2,29 @@ import React from "react";
 import styles from "./Product.module.css";
 import { assets } from "../../../assets/assets";
 import ProductPrice from "../../../components/ProductPrice/ProductPrice";
-import { Heart } from "lucide-react";
+import { IonIcon } from "@ionic/react";
+import { heartOutline, heart } from "ionicons/icons";
+import { setItem } from "../redux/product.Slice";
+import { useDispatch } from "react-redux";
+import { setIsShow } from "../../../components/ProductCard/product.Slice";
+
 // import { NavLink } from "react-router-dom";
 
-function ProductItem() {
+function ProductItem({ currntObj }) {
+  const dispatch = useDispatch();
+
+  function toggleClick(event, items) {
+    event.preventDefault();
+    dispatch(setItem(items));
+  }
+
+  function moveToBag(addObj) {
+    console.log(addObj);
+    console.log("hacker");
+
+    dispatch(setIsShow(addObj));
+  }
+
   return (
     <div className={styles.wishlistCard}>
       <img src={assets.women} alt="women" />
@@ -18,9 +37,17 @@ function ProductItem() {
       <div className={styles.moveToBagBox}>
         <div>
           <ion-icon name="bag-outline"></ion-icon>
-          <span>move to bag</span>
+          <span onClick={() => moveToBag(currntObj)}>move to bag</span>
         </div>
-        <Heart size={16} />
+        <span onClick={(e) => toggleClick(e, currntObj)}>
+          <IonIcon
+            icon={currntObj.isFilled ? heart : heartOutline}
+            style={{
+              color: currntObj.isFilled ? "red" : "black",
+              fontSize: "20px",
+            }}
+          />
+        </span>
       </div>
     </div>
   );

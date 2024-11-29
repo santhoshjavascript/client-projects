@@ -1,5 +1,4 @@
 export const BASE_URL = "http://localhost:9000/products";
-export const SLIDER_URL = "https://fakestoreapi.com/products";
 
 export async function combinedLoader({ params }) {
   try {
@@ -23,10 +22,14 @@ export async function combinedLoader({ params }) {
 
 export async function sliderLoader() {
   try {
-    const sliderResponse = await fetch(SLIDER_URL);
+    const sliderResponse = await fetch(BASE_URL);
     if (!sliderResponse.ok) throw new Error("Error fetching slider data");
     const sliderData = await sliderResponse.json();
-    return { home: sliderData };
+    const itemsWithIsFilled = sliderData.map((item) => ({
+      ...item,
+      isFilled: false,
+    }));
+    return { home: itemsWithIsFilled };
   } catch (error) {
     console.error("Slider loader error:", error.message);
     throw error;
