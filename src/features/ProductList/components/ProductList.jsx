@@ -5,10 +5,8 @@ import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
-import { setError, setItems, setLoading } from "../redux/product.Slice";
+import { setItems } from "../redux/product.Slice";
 import { useLoaderData } from "react-router-dom";
-
-const BASE_URL = "https://fakestoreapi.com/products";
 
 function ProductList({ type }) {
   const { items, loading } = useSelector((current) => current.product);
