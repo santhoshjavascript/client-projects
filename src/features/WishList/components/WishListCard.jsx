@@ -15,6 +15,8 @@ function WishListCard({ obj }) {
   }
 
   function moveToBag(addObj) {
+    console.log(addObj);
+
     dispatch(setIsShow(addObj));
   }
 
