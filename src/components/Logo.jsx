@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../features/Header/components/Navbar.module.css";
 export default function LogoName({
   color = "#000",
@@ -5,7 +6,8 @@ export default function LogoName({
   marginBottom,
 }) {
   return (
-    <h1
+    <Link
+      to="/"
       className={styles.logoName}
       style={{
         color: color,
@@ -15,6 +17,6 @@ export default function LogoName({
       }}
     >
       NEXTGEN
-    </h1>
+    </Link>
   );
 }
