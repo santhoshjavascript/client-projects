@@ -1,57 +1,81 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Devonshire&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Utility classes */
+:global(.grid) {
+  display: grid;
+  justify-content: center;
+}
 
-@font-face {
-  font-family: "Devans";
-  src: url("../../../fonts/Devans.otf") format("truetype");
-  font-weight: 400;
-} */
+:global(.flex) {
+  display: flex;
+  align-items: center;
+}
 
+/* Header styles */
 .header {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 99;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   align-items: center;
   padding: 1.2rem 1.8rem;
-  position: sticky;
 }
 
 .logoName {
-  font-size: 4.2rem;
+  font-size: 4rem;
   font-weight: 550;
   letter-spacing: 0.3rem;
   width: min-content;
   text-decoration: none;
 }
 
-.input {
+.inputs {
   gap: 2.4rem;
   grid-template-columns: 5fr 1fr;
 }
 
-.inputContainer {
+.inputContainer,
+.inputContainerRes {
+  display: grid;
+  grid-template-columns: 5fr auto;
   border: solid 1px #ccc;
   align-items: center;
-  padding: 0 0.4rem;
-
-  grid-template-columns: 5fr 1fr;
 }
 
-.inputContainer input {
+.inputContainer {
+  padding: 0 0.8rem;
+}
+
+.inputContainerRes {
+  padding: 0 0.8rem;
+  border-bottom: 2px solid #000;
+}
+
+.inputBox,
+.inputBoxRes {
   border: none;
   outline: none;
+  padding: 0 0.8rem;
+  font-size: 1.4rem;
+}
+
+.inputBox {
   height: 4rem;
-  padding: 0 0.4rem;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+}
+
+.inputBoxRes {
+  height: 3.6rem;
+  width: 100%;
 }
 
 .inputContainer span {
-  justify-self: end;
+  width: 5rem;
+  display: grid;
+  justify-items: center;
   cursor: pointer;
 }
 
@@ -74,20 +98,6 @@
 .actions span:hover {
   cursor: pointer;
   color: #000;
-}
-
-:global(.grid) {
-  display: grid;
-  justify-content: center;
-}
-
-:global(.flex) {
-  display: flex;
-  align-items: center;
-}
-
-:global(.grid--col-2) {
-  grid-template-columns: 2fr 1fr;
 }
 
 .userIcon {
@@ -149,7 +159,8 @@
   stroke: #000;
 }
 
-.menuList {
+.menuList,
+.menuListRes {
   font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -157,7 +168,6 @@
   justify-content: center;
   padding: 1rem 4.8rem;
   text-transform: uppercase;
-
   border-top: 1px solid #ccc;
 }
 
@@ -166,7 +176,6 @@
   gap: 0.6rem;
   cursor: pointer;
   padding-bottom: 0.2rem;
-
   position: relative;
 }
 
@@ -198,4 +207,143 @@
 
 .menuItem:hover:after {
   width: 100%;
+}
+
+.resMenu {
+  align-items: center;
+  gap: 2.4rem;
+  display: none;
+}
+
+.resIcon {
+  display: none;
+  color: #525252;
+}
+
+.resMenu span {
+  display: none;
+  gap: 0.8rem;
+  outline: 1px solid #525252;
+  /* transform: translateX(-200%); */
+}
+
+.resMenu span button {
+  font-size: 2.4rem;
+  height: min-content;
+  border: none;
+  background: none;
+  padding-inline: 0.6rem;
+  cursor: pointer;
+}
+
+.resMenu span input {
+  border: none;
+  padding-left: 1.6rem;
+}
+
+.btnClose {
+  position: absolute;
+  top: 0;
+  right: 0.8rem;
+  font-size: 4.8rem;
+  color: #525252;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+/* Responsive styles */
+@media (max-width: 1046px) {
+  .logoName {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .navContainer {
+    grid-template-columns: 2fr 1.2fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .navContainer {
+    padding: 1.8rem;
+    grid-template-columns: auto 4fr auto;
+  }
+
+  .inputContainer {
+    display: none;
+  }
+
+  .resIcon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .inputs {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+
+  .resMenu {
+    display: flex;
+  }
+
+  .resMenu.searchOpen span {
+    display: flex;
+  }
+
+  .resMenu.searchOpen .lucideSearchIcon {
+    display: none;
+  }
+
+  .main {
+    position: relative;
+  }
+
+  .menuListRes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 25rem;
+    z-index: 999;
+    padding: 0;
+    gap: 0;
+    align-items: start;
+    flex-direction: column;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .menuListRes .menuItem span {
+    margin-left: auto;
+  }
+
+  .menuListRes .menuItem:first-child {
+    margin: 0 auto 4.8rem auto;
+  }
+
+  .menuListRes .menuItem:not(:first-child) {
+    border-bottom: 1px solid #efecf0;
+    padding: 2.4rem 2.7rem;
+    width: 100%;
+    font-weight: 550;
+  }
+
+  .menuListRes.open {
+    transform: translateX(0%);
+  }
+
+  .overlay.open {
+    display: block;
+  }
 }

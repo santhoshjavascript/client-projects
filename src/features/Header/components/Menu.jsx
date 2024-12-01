@@ -2,7 +2,7 @@ import styles from "./Navbar.module.css";
 import { menus } from "../../../utils/utils";
 import React from "react";
 
-function Menu() {
+function MenuContainer() {
   return (
     <ul className={`${styles.menuList} flex`}>
       {menus.map((item) => {
@@ -19,4 +19,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default MenuContainer;

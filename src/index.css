@@ -45,3 +45,9 @@ body {
 ul {
   list-style: none;
 }
+
+@media (max-width: 968px) {
+  html {
+    font-size: 56.25%;
+  }
+}
