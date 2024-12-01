@@ -19,9 +19,6 @@ function ProductItem({ currntObj }) {
   }
 
   function moveToBag(addObj) {
-    console.log(addObj);
-    console.log("hacker");
-
     dispatch(setIsShow(addObj));
   }
 

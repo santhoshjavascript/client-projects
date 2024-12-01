@@ -9,7 +9,7 @@ function Actions() {
 
   function handleUserToggle() {
     if (userIconDetailsRef.current) {
-      userIconDetailsRef.current.classList.toggle(styles.active);
+      userIconDetailsRef.current.classList.toggle(`${styles.active}`);
     }
   }
 
@@ -44,8 +44,8 @@ function Actions() {
           </svg>
 
           <div className={styles.userIconDetails} ref={userIconDetailsRef}>
-            <Link>Login</Link>
-            <Link>Signup</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/login/signup">Signup</Link>
           </div>
         </div>
 

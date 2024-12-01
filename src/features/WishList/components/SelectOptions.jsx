@@ -20,7 +20,6 @@ function SelectOptions() {
   function selectedSize(size) {
     dispatch(selectedSizes(size));
   }
-  console.log(isShow);
 
   function addToCart() {
     if (isShow) {
