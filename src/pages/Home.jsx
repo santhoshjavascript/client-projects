@@ -5,13 +5,13 @@ import Gender from "../features/Gender/components/Gender";
 
 function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ProductList type={"Hot Collections"} />
       <ProductList type={"Featured Products"} />
       <Gender />
       <ProductList type={"Featured Products"} />
-    </>
+    </main>
   );
 }
 

@@ -1,10 +1,18 @@
 // import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { assets } from "../../../assets/assets";
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Actions() {
+  const userIconDetailsRef = useRef(null);
+
+  function handleUserToggle() {
+    if (userIconDetailsRef.current) {
+      userIconDetailsRef.current.classList.toggle(`${styles.active}`);
+    }
+  }
+
   return (
     <div className={`${styles.input} grid`}>
       <div className={`${styles.inputContainer} grid`}>
@@ -18,7 +26,8 @@ function Actions() {
         </span>
       </div>
       <div className={`${styles.actions} flex`}>
-        <span>
+        {/* user logo */}
+        <div className={styles.userIcon} onClick={handleUserToggle}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,7 +42,12 @@ function Actions() {
               d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
             />
           </svg>
-        </span>
+
+          <div className={styles.userIconDetails} ref={userIconDetailsRef}>
+            <Link to="/login">Login</Link>
+            <Link to="/login/signup">Signup</Link>
+          </div>
+        </div>
 
         {/* Heart Btn */}
         <NavLink
