@@ -14,9 +14,9 @@ function Actions() {
   }
 
   return (
-    <div className={`${styles.input} grid`}>
-      <div className={`${styles.inputContainer} grid`}>
-        <input type="text" placeholder="Search" />
+    <div className={`${styles.inputs} grid`}>
+      <div className={styles.inputContainer}>
+        <input type="text" placeholder="Search" className={styles.inputBox} />
         <span className="flex">
           <img
             src={assets.searchIcon}
