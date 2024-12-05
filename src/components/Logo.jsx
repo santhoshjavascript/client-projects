@@ -13,7 +13,6 @@ export default function LogoName({
         color: color,
         justifySelf: justifySelf,
         marginBottom: marginBottom,
-        display: "inline-block",
       }}
     >
       NEXTGEN

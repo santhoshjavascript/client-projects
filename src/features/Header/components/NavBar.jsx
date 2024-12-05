@@ -6,6 +6,7 @@ import Offer from "../../Offer/components/Offer";
 import LogoName from "../../../components/Logo";
 import { Menu, Search } from "lucide-react";
 import MenuLarge from "./MenuLarge";
+import { assets } from "../../../assets/assets";
 
 function NavBar({ isMenuOpen, handleMenuToggle }) {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 840);
@@ -48,6 +49,7 @@ function NavBar({ isMenuOpen, handleMenuToggle }) {
               className={`${styles.resIcon} ${styles.lucideSearchIcon}`}
               onClick={handleSearchToggle}
             />
+            <img src={assets.logo} alt="" className={styles.iconRes} />
             <span>
               <input type="text" />
               <button onClick={handleSearchToggle}>&times;</button>

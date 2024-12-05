@@ -211,7 +211,7 @@
 
 .resMenu {
   align-items: center;
-  gap: 2.4rem;
+  gap: 2rem;
   display: none;
 }
 
@@ -308,12 +308,19 @@
     position: relative;
   }
 
+  .iconRes {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: brightness(0);
+    display: none;
+  }
+
   .menuListRes {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 25rem;
+    width: 35rem;
     z-index: 999;
     padding: 0;
     gap: 0;
@@ -344,6 +351,39 @@
   }
 
   .overlay.open {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .logoName {
+    font-size: 3rem;
+  }
+
+  .lucideSearchIcon {
+    display: none;
+  }
+
+  .menuListRes {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 416px) {
+  .navContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logoName {
+    display: none;
+  }
+
+  .actions {
+    gap: 1.2rem;
+    justify-self: end;
+  }
+
+  .iconRes {
     display: block;
   }
 }

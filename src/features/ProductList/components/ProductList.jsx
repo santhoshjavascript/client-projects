@@ -27,24 +27,11 @@ function ProductList({ type }) {
     <div className={styles.productContainer}>
       <h1>{type}</h1>
 
-      <Swiper
-        modules={[Navigation, Pagination, A11y, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={5}
-        autoplay={{
-          delay: 10000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        pagination={false}
-        speed={1200}
-      >
-        {items.map((item) => (
-          <SwiperSlide key={item.id}>
-            <ProductItem currntObj={item} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {items.map((item) => (
+        <SwiperSlide key={item.id}>
+          <ProductItem currntObj={item} />
+        </SwiperSlide>
+      ))}
       <div
         className={styles.overlay}
         style={{ display: isShow ? "block" : "none" }}
